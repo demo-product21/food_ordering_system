@@ -341,9 +341,8 @@ document.addEventListener("DOMContentLoaded", async function(){
     //window.open('https://m.me/catamora.07', '_blank');
 
 
-    navigator.clipboard.writeText(order_details).catch(err => {
-        console.error("Clipboard copy failed: ", err);
-    });
+    navigator.clipboard.writeText(order_details);
+    window.open('https://m.me/catamora.07', '_blank');
 
   })
 
