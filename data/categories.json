@@ -1,10 +1,30 @@
 [
     {
-        "name" : "Jollibee",
+        "name" : "Fried Chicken & Fast Food Classics",
         "id" : 1
     },
     {
-        "name" : "Category 2",
+        "name" : "Pizza & Pasta",
         "id" : 2
+    },
+    {
+        "name" : "Burgers & Sandwiches",
+        "id" : 3
+    },
+    {
+        "name" : "Rice Meals & Filipino Favorites",
+        "id" : 4
+    },
+    {
+        "name" : "Noodles & Pancit",
+        "id" : 5
+    },
+    {
+        "name" : "Japanese & Korean Favorites",
+        "id" : 6
+    },
+    {
+        "name" : "Desserts & Drinks",
+        "id" : 7
     }
 ]

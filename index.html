@@ -3,12 +3,13 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Order Foods</title>
+    <title>Gusto | Food Delivery</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <main>
@@ -16,23 +17,23 @@
         <div class="nav">
             <div class="kalam-font bold fs-36">Gusto</div>
             <ul class="fs-16 semi-bold">
-                <li class="active">Menu</li>
-                <li>Restaurant</li>
-                <li>Contact</li>
+                <li class="active" data-id="menu">Menu</li>
+                <li data-id="restaurant">Restaurant</li>
+                <li data-id="contact">Contact</li>
             </ul>
         </div>
         <div class="seller-quotes">
-            <span class="fs-16">"Twins Food Delivery are offering variety of food to select from. We deliver within Masbate City"</span>
+            <span class="fs-24" style="font-style: italic;">"We can’t buy happiness, but we can buy pizza, and that’s close enough."</span>
         </div>
         <div class="location">
-            <span class="fs-16 semi-bold">Mabini Street</span>
+            <span class="fs-16 semi-bold">The Bayleaf, Muralla St</span>
         </div>
     </div>
     <div class="position-relative menu-wrapper">
         <div class="menu">
             <div style="height: 30px;"></div>
             <span class="fs-36 kalam-font bold">Menu</span>
-            <p class="fs-16">Browse our menu and pick your favorite dishes! Simply select your favorites below to add them to your cart.</p>
+            <p class="fs-16">Browse our menu and pick your favorites below to add them to your cart.</p>
         </div>
         <div class="cart d-none">
             <div class="pos-right">
@@ -50,6 +51,89 @@
             </div>
             <span class="fs-36 kalam-font bold">Cart</span>
             <p class="fs-16">Here’s what’s in your cart. Review your selections before proceeding.</p>
+        </div>
+        <div class="restaurant d-none">
+            <div class="pos-right" style="visibility: hidden;">
+                <a class="fs-16 text-underline back-to-menu pointer bold" style="display: flex;column-gap:3px;align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="13px" viewBox="-4.5 0 20 20" version="1.1">
+                </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -6679.000000)" fill="#000000">
+                            <g id="icons" transform="translate(56.000000, 160.000000)">
+                                <path d="M338.61,6539 L340,6537.594 L331.739,6528.987 L332.62,6528.069 L332.615,6528.074 L339.955,6520.427 L338.586,6519 C336.557,6521.113 330.893,6527.014 329,6528.987 C330.406,6530.453 329.035,6529.024 338.61,6539" id="arrow_left-[#334]">
+                            </path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>Menu</a>
+            </div>
+            <span class="fs-36 kalam-font bold">Restaurant</span>
+            <p class="fs-16">A look inside our restaurant.</p>
+        </div>
+        <div class="contact d-none">
+            <div class="pos-right" style="visibility: hidden;">
+                <a class="fs-16 text-underline back-to-menu pointer bold" style="display: flex;column-gap:3px;align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="13px" viewBox="-4.5 0 20 20" version="1.1">
+                </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -6679.000000)" fill="#000000">
+                            <g id="icons" transform="translate(56.000000, 160.000000)">
+                                <path d="M338.61,6539 L340,6537.594 L331.739,6528.987 L332.62,6528.069 L332.615,6528.074 L339.955,6520.427 L338.586,6519 C336.557,6521.113 330.893,6527.014 329,6528.987 C330.406,6530.453 329.035,6529.024 338.61,6539" id="arrow_left-[#334]">
+                            </path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>Menu</a>
+            </div>
+            <span class="fs-36 kalam-font bold">Contact</span>
+            <p class="fs-16">Have a question or need help? We’re just a message away.</p>
+        </div>
+        <div class="contact d-none">
+            <span class="fs-16">Socials & Contacts</span>
+            <div class="socials-and-contacts">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="30px" height="30px" viewBox="0 0 32 32"><path d="M21.95 5.005l-3.306-.004c-3.206 0-5.277 2.124-5.277 5.415v2.495H10.05v4.515h3.317l-.004 9.575h4.641l.004-9.575h3.806l-.003-4.514h-3.803v-2.117c0-1.018.241-1.533 1.566-1.533l2.366-.001.01-4.256z"/></svg>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
+                    </defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Dribbble-Light-Preview" transform="translate(-340.000000, -7439.000000)" fill="#000000">
+                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                    <path d="M289.869652,7279.12273 C288.241769,7279.19618 286.830805,7279.5942 285.691486,7280.72871 C284.548187,7281.86918 284.155147,7283.28558 284.081514,7284.89653 C284.035742,7285.90201 283.768077,7293.49818 284.544207,7295.49028 C285.067597,7296.83422 286.098457,7297.86749 287.454694,7298.39256 C288.087538,7298.63872 288.809936,7298.80547 289.869652,7298.85411 C298.730467,7299.25511 302.015089,7299.03674 303.400182,7295.49028 C303.645956,7294.859 303.815113,7294.1374 303.86188,7293.08031 C304.26686,7284.19677 303.796207,7282.27117 302.251908,7280.72871 C301.027016,7279.50685 299.5862,7278.67508 289.869652,7279.12273 M289.951245,7297.06748 C288.981083,7297.0238 288.454707,7296.86201 288.103459,7296.72603 C287.219865,7296.3826 286.556174,7295.72155 286.214876,7294.84312 C285.623823,7293.32944 285.819846,7286.14023 285.872583,7284.97693 C285.924325,7283.83745 286.155174,7282.79624 286.959165,7281.99226 C287.954203,7280.99968 289.239792,7280.51332 297.993144,7280.90837 C299.135448,7280.95998 300.179243,7281.19026 300.985224,7281.99226 C301.980262,7282.98483 302.473801,7284.28014 302.071806,7292.99991 C302.028024,7293.96767 301.865833,7294.49274 301.729513,7294.84312 C300.829003,7297.15085 298.757333,7297.47145 289.951245,7297.06748 M298.089663,7283.68956 C298.089663,7284.34665 298.623998,7284.88065 299.283709,7284.88065 C299.943419,7284.88065 300.47875,7284.34665 300.47875,7283.68956 C300.47875,7283.03248 299.943419,7282.49847 299.283709,7282.49847 C298.623998,7282.49847 298.089663,7283.03248 298.089663,7283.68956 M288.862673,7288.98792 C288.862673,7291.80286 291.150266,7294.08479 293.972194,7294.08479 C296.794123,7294.08479 299.081716,7291.80286 299.081716,7288.98792 C299.081716,7286.17298 296.794123,7283.89205 293.972194,7283.89205 C291.150266,7283.89205 288.862673,7286.17298 288.862673,7288.98792 M290.655732,7288.98792 C290.655732,7287.16159 292.140329,7285.67967 293.972194,7285.67967 C295.80406,7285.67967 297.288657,7287.16159 297.288657,7288.98792 C297.288657,7290.81525 295.80406,7292.29716 293.972194,7292.29716 C292.140329,7292.29716 290.655732,7290.81525 290.655732,7288.98792">
+
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23px" height="23px" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 5.5C21 14.0604 14.0604 21 5.5 21C5.11378 21 4.73086 20.9859 4.35172 20.9581C3.91662 20.9262 3.69906 20.9103 3.50103 20.7963C3.33701 20.7019 3.18146 20.5345 3.09925 20.364C3 20.1582 3 19.9181 3 19.438V16.6207C3 16.2169 3 16.015 3.06645 15.842C3.12515 15.6891 3.22049 15.553 3.3441 15.4456C3.48403 15.324 3.67376 15.255 4.05321 15.117L7.26005 13.9509C7.70153 13.7904 7.92227 13.7101 8.1317 13.7237C8.31637 13.7357 8.49408 13.7988 8.64506 13.9058C8.81628 14.0271 8.93713 14.2285 9.17882 14.6314L10 16C12.6499 14.7999 14.7981 12.6489 16 10L14.6314 9.17882C14.2285 8.93713 14.0271 8.81628 13.9058 8.64506C13.7988 8.49408 13.7357 8.31637 13.7237 8.1317C13.7101 7.92227 13.7904 7.70153 13.9509 7.26005L13.9509 7.26005L15.117 4.05321C15.255 3.67376 15.324 3.48403 15.4456 3.3441C15.553 3.22049 15.6891 3.12515 15.842 3.06645C16.015 3 16.2169 3 16.6207 3H19.438C19.9181 3 20.1582 3 20.364 3.09925C20.5345 3.18146 20.7019 3.33701 20.7963 3.50103C20.9103 3.69907 20.9262 3.91662 20.9581 4.35173C20.9859 4.73086 21 5.11378 21 5.5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 4C21.6569 4 23 5.34315 23 7V17C23 18.6569 21.6569 20 20 20H4C2.34315 20 1 18.6569 1 17V7C1 5.34315 2.34315 4 4 4H20ZM19.2529 6H4.74718L11.3804 11.2367C11.7437 11.5236 12.2563 11.5236 12.6197 11.2367L19.2529 6ZM3 7.1688V17C3 17.5523 3.44772 18 4 18H20C20.5523 18 21 17.5523 21 17V7.16882L13.8589 12.8065C12.769 13.667 11.231 13.667 10.1411 12.8065L3 7.1688Z" fill="#0F0F0F"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="restaurant d-none">
+            <div class="photo">
+                <img src="./assets/restaurant1.jpg"/>
+            </div>
+            <div class="photo">
+                <img src="./assets/restaurant2.jpg"/>
+            </div>
+            <div class="photo">
+                <img src="./assets/restaurant3.jpg"/>
+            </div>
+            <div class="photo">
+                <img src="./assets/restaurant4.jpg"/>
+            </div>
+            <div class="photo">
+                <img src="./assets/restaurant5.jpg"/>
+            </div>
         </div>
         <div class="cart d-none cart-items-wrapper">
             
@@ -104,15 +188,29 @@
                 </svg>
             </div>
         </div>
-        <div class="menu">
+        <div class="menu restaurant contact">
             <span class="fs-20 bold kalam-font">Gusto</span><br>
             <div class="fs-16 footer-nav">
-                <a>Menu</a>
-                <a>Restaurant</a>
-                <a>Contact</a>
+                <a class="pointer" data-id="menu">Menu</a>
+                <a class="pointer" data-id="restaurant">Restaurant</a>
+                <a class="pointer" data-id="contact">Contact</a>
             </div>
             <div style="height: 20px;"></div>
             <div class="d-centered fs-16">© 2025 . Gusto</div>
+        </div>
+    </div>
+    <div class="page-loader">
+        <span class="kalam-font fs-36">Gusto</span>
+    </div>
+    <div class="redirecting-modal d-none">
+        <div class="modal-wrapper wrapper-2">
+            <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="clamp(4.375rem, 3.9696rem + 2.027vw, 6.25rem)" height="clamp(4.375rem, 3.9696rem + 2.027vw, 6.25rem)" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12.6111L8.92308 17.5L20 6.5" stroke="#2ab04e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg><br>
+                <span class="fs-20 bold">Redirecting to messenger..</span><br>
+                <span class="fs-16">Make sure to paste them in the chat ;)</span>
+            </div>
         </div>
     </div>
     <div class="modal d-none">
@@ -130,18 +228,32 @@
             </div>
             <div class="form flex-column">
                 <span class="fs-13">Location:</span>
-                <input type="text" name="location" placeholder="Enter your location"/>
+                <input type="text" autocomplete="off" name="location" placeholder="Enter your location"/>
                 <span class="fs-13">Name:</span>
-                <input type="text" name="name" placeholder="Enter your name"/>
+                <input type="text" autocomplete="off" name="name" placeholder="Enter your name"/>
                 <span class="fs-13">Contact:</span>
-                <input type="text" name="contact" placeholder="Enter your contact number">
-                <br>
+                <input type="text" autocomplete="off" name="contact" placeholder="Enter your contact number">
+                
+                <div class="custom-order-heading">
+                    <span class="fs-13 bold">Add a custom order</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 15l5 5 5-5"/>
+                    <path d="M7 9l5-5 5 5"/>
+                    </svg>
+                </div>
+                <div class="custom-order-wrapper">
+                   <textarea rows="4" class="custom-order" placeholder="Enter your custom orders"></textarea>
+                </div>
                 <span class="fs-13">Click “Order now” to copy the order details below and open the seller’s Messenger. Paste them in the chat and 
 send to place your order.</span>    
                 <div class="order-details">
                     <span class="fs-13">Orders:</span>
                     <div class="list-of-orders details-container mgb-10">
                         
+                    </div>
+                    <span class="d-none custom-order-label fs-13">Custom orders:</span>
+                    <div class="details-container custom-order-text fs-13 mgb-10">
+
                     </div>
                     <span class="fs-13">Location:</span>
                     <div class="details-container mgb-10">
@@ -153,8 +265,8 @@ send to place your order.</span>
                     </div>
                     
                 </div>
-                <textarea class="d-none"></textarea>
-                <div class="order-now-btn fs-16 mgt-10 pointer">
+                <textarea class="d-none to-copy"></textarea>
+                <div class="order-now-btn fs-16 mgt-10 pointer disabled-btn">
                     Order now
                 </div>
                 <div style="height: 40px;"></div>

@@ -1,51 +1,212 @@
 [
     {
-        "name" : "Spaghetti Pomodoro",
-        "price" : 250,
+        "name" : "Jollibee Chickenjoy (1pc with rice & gravy)",
+        "price" : 99,
         "id" : 1,
         "category" : 1,
-        "img_url" : "./assets/featured_2.jpg"
+        "img_url" : "./assets/1.jpg"
     },
     {
-        "name" : "Item 1",
-        "price" : 250,
+        "name" : "Jollibee Chickenjoy w/ Spaghetti (1pc)",
+        "price" : 140,
         "id" : 2,
-        "category" : 2,
-        "img_url" : "./assets/featured_2.jpg"
+        "category" : 1,
+        "img_url" : "./assets/2.jpg"
     },
     {
-        "name" : "Item 1",
-        "price" : 250,
+        "name" : "Mang Inasal Chicken Inasal (Paa, 1 rice)",
+        "price" : 129,
         "id" : 3,
-        "category" : 2,
-        "img_url" : "./assets/featured_2.jpg"
+        "category" : 1,
+        "img_url" : "./assets/3.jpg"
     },
     {
-        "name" : "Item 1",
-        "price" : 250,
+        "name" : "McDonald’s Chicken McDo with Rice & Drink",
+        "price" : 120,
         "id" : 4,
-        "category" : 2,
-        "img_url" : "./assets/featured_2.jpg"
+        "category" : 1,
+        "img_url" : "./assets/4.jpg"
     },
     {
-        "name" : "Item 1",
-        "price" : 250,
+        "name" : "Greenwich 9” Pepperoni Pizza",
+        "price" : 299,
         "id" : 5,
-        "category" : 1,
-        "img_url" : "./assets/featured_2.jpg"
+        "category" : 2,
+        "img_url" : "./assets/5.png"
     },
     {
-        "name" : "Item 1",
-        "price" : 250,
+        "name" : "Shakey’s Thin Crust Manager’s Choice (Large)",
+        "price" : 629,
         "id" : 6,
-        "category" : 1,
-        "img_url" : "./assets/featured_2.jpg"
+        "category" : 2,
+        "img_url" : "./assets/6.png"
     },
     {
-        "name" : "Item 1",
-        "price" : 250,
+        "name" : "Angel’s Pizza Creamy Spinach (Family size)",
+        "price" : 595,
         "id" : 7,
         "category" : 2,
-        "img_url" : "./assets/featured_2.jpg"
+        "img_url" : "./assets/7.jpg"
+    },
+    {
+        "name" : "Yellow Cab New York’s Finest (Regular)",
+        "price" : 495,
+        "id" : 8,
+        "category" : 2,
+        "img_url" : "./assets/8.jpg"
+    },
+    {
+        "name" : "Filipino-style Spaghetti (Jollibee)",
+        "price" : 70,
+        "id" : 9,
+        "category" : 2,
+        "img_url" : "./assets/9.jpg"
+    },
+    {
+        "name" : "Jollibee Yum Burger",
+        "price" : 45,
+        "id" : 10,
+        "category" : 3,
+        "img_url" : "./assets/10.jpg"
+    },
+    {
+        "name" : "Jollibee Champ Burger",
+        "price" : 165,
+        "id" : 11,
+        "category" : 3,
+        "img_url" : "./assets/11.jpg"
+    },
+    {
+        "name" : "McDonald’s Cheeseburger",
+        "price" : 65,
+        "id" : 12,
+        "category" : 3,
+        "img_url" : "./assets/12.jpg"
+    },
+    {
+        "name" : "McDonald’s Big Mac Meal",
+        "price" : 199,
+        "id" : 13,
+        "category" : 3,
+        "img_url" : "./assets/13.jpg"
+    },
+    {
+        "name" : "Subway 6-inch Italian B.M.T.",
+        "price" : 165,
+        "id" : 14,
+        "category" : 3,
+        "img_url" : "./assets/14.png"
+    },
+    {
+        "name" : "Pork BBQ with Rice (2 sticks)",
+        "price" : 110,
+        "id" : 15,
+        "category" : 4,
+        "img_url" : "./assets/15.jpg"
+    },
+    {
+        "name" : "Lechon Kawali with Rice",
+        "price" : 155,
+        "id" : 16,
+        "category" : 4,
+        "img_url" : "./assets/16.jpg"
+    },
+    {
+        "name" : "Beef Tapsilog",
+        "price" : 145,
+        "id" : 17,
+        "category" : 4,
+        "img_url" : "./assets/17.jpg"
+    },
+    {
+        "name" : "Pork Sisig with Rice",
+        "price" : 150,
+        "id" : 18,
+        "category" : 4,
+        "img_url" : "./assets/18.jpg"
+    },
+    {
+        "name" : "Lumpiang Shanghai (Party Tray)",
+        "price" : 750,
+        "id" : 19,
+        "category" : 4,
+        "img_url" : "./assets/19.jpg"
+    },
+    {
+        "name" : "Pancit Bihon (Good for 3-4)",
+        "price" : 450,
+        "id" : 20,
+        "category" : 5,
+        "img_url" : "./assets/20.png"
+    },
+    {
+        "name" : "Lomi (Solo)",
+        "price" : 120,
+        "id" : 21,
+        "category" : 5,
+        "img_url" : "./assets/21.jpeg"
+    },
+    {
+        "name" : "Pancit Malabon (Small Tray)",
+        "price" : 500,
+        "id" : 22,
+        "category" : 5,
+        "img_url" : "./assets/22.jpg"
+    },
+    {
+        "name" : "California Maki (8 pcs)",
+        "price" : 220,
+        "id" : 23,
+        "category" : 6,
+        "img_url" : "./assets/23.webp"
+    },
+    {
+        "name" : "Tonkotsu Rame",
+        "price" : 350,
+        "id" : 24,
+        "category" : 6,
+        "img_url" : "./assets/24.jpg"
+    },
+    {
+        "name" : "Korean Fried Chicken (Soy Garlic, Half Dozen)",
+        "price" : 320,
+        "id" : 25,
+        "category" : 6,
+        "img_url" : "./assets/25.jpg"
+    },
+    {
+        "name" : "Samgyupsal Set (Cooked Meat + Sides)",
+        "price" : 699,
+        "id" : 26,
+        "category" : 6,
+        "img_url" : "./assets/26.jpg"
+    },
+    {
+        "name" : "Milk Tea (Medium)",
+        "price" : 120,
+        "id" : 27,
+        "category" : 7,
+        "img_url" : "./assets/27.png"
+    },
+    {
+        "name" : "Halo-Halo (Razon’s)",
+        "price" : 135,
+        "id" : 28,
+        "category" : 7,
+        "img_url" : "./assets/28.jpg"
+    },
+    {
+        "name" : "Cheesecake Slice",
+        "price" : 150,
+        "id" : 29,
+        "category" : 7,
+        "img_url" : "./assets/29.jpg"
+    },
+    {
+        "name" : "Selecta Ice Cream (1.5L)",
+        "price" : 350,
+        "id" : 30,
+        "category" : 7,
+        "img_url" : "./assets/30.png"
     }
 ]

@@ -1,4 +1,12 @@
+window.onload = function(){
+  document.querySelector(".page-loader").classList.add("hide-loader");
+  setTimeout(() => {
+    document.querySelector(".page-loader").remove();
+  }, 500);
+}
+
 document.addEventListener("DOMContentLoaded", async function(){
+ 
   var cartIcon = document.querySelector(".cart-icon");
   var scrollUpIcon = document.querySelector(".scroll-up");
   var numOfItemsInCart = 0;
@@ -6,8 +14,30 @@ document.addEventListener("DOMContentLoaded", async function(){
   var df = 20;
   var subtotal = 0;
   var total = 0;
+  var currentSection = "menu";
 
   document.querySelector("#df").textContent = df;
+
+  document.querySelectorAll(".nav li").forEach(function(li){
+    li.addEventListener("click", function(){
+
+      document.querySelectorAll(".menu-wrapper > div." + currentSection).forEach(function(el){el.classList.add("d-none")});
+      
+      let id = li.getAttribute("data-id");
+      currentSection = id;
+      document.querySelectorAll(".menu-wrapper > div." + currentSection).forEach(function(el){el.classList.remove("d-none")});
+      document.querySelectorAll(".nav li").forEach(function(li){if(li.classList.contains("active"))(li.classList.remove("active"))});
+      li.classList.add("active");
+      
+      document.querySelector(".cart-items-wrapper").innerHTML = "";
+      total = 0;
+      subtotal = 0;
+      if (cart.length > 0) {
+        cartIcon.classList.remove("d-none");
+      }
+      
+    })
+  })
 
   document.querySelector(".menu-wrapper").addEventListener("scroll", () => {
     if (!document.querySelector(".menu-wrapper .menu").classList.contains("d-none")) {
@@ -187,17 +217,21 @@ document.addEventListener("DOMContentLoaded", async function(){
           <div class="item-image position-relative">
             ${img.outerHTML}
             <div class="selected-item-overlay d-none">
-              <div class="fs-16 bold">Selected 
-                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none">
-                <path d="M4 12.6111L8.92308 17.5L20 6.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <div class="fs-16 bold" style="color:#fff;display:flex;flex-direction:column;align-items:center;"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12.6111L8.92308 17.5L20 6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
+                
+                Selected
               </div>
             </div>
           </div>
-          <div class="item-desc">
-            <span class="fs-16 kalam-font">${product.name}</span>
+          <div class="item-desc" style="margin-top:3px;display:flex !important;flex-direction:column;">
+            <div style="line-height:13px;flex:1;">
+              <span class="fs-16 kalam-font">${product.name}</span>
+            </div>
             <div class="pos-right"><span class="bold fs-16">P ${product.price}</span></div>
-          </div>
+          </div
         </div>
       `);
 
@@ -242,27 +276,54 @@ document.addEventListener("DOMContentLoaded", async function(){
 
   cartIcon.addEventListener("click", function(){
     document.querySelectorAll(".menu-wrapper > div.cart").forEach(function(el){el.classList.remove("d-none")});
-    document.querySelectorAll(".menu-wrapper > div.menu").forEach(function(el){el.classList.add("d-none")});
+    document.querySelectorAll(".menu-wrapper > div." + currentSection).forEach(function(el){el.classList.add("d-none")});
     displayCartItems();
     checkTotal();
     if (!scrollUpIcon.classList.contains("d-none")) scrollUpIcon.classList.add("d-none");
     this.classList.add("d-none");
+
+    currentSection = "cart";
   });
 
-  document.querySelector(".back-to-menu").addEventListener("click", function(){
-    document.querySelectorAll(".menu-wrapper > div.cart").forEach(function(el){el.classList.add("d-none")});
-    document.querySelectorAll(".menu-wrapper > div.menu").forEach(function(el){el.classList.remove("d-none")});
+  function backToMenu(){
+    document.querySelectorAll(".nav li").forEach(function(li){if(li.classList.contains("active"))(li.classList.remove("active"))});
+    document.querySelector(".nav li[data-id='menu']").classList.add("active");
+    currentSection = "menu";
+  }
 
-    document.querySelector(".cart-items-wrapper").innerHTML = "";
+  document.querySelectorAll(".back-to-menu").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".menu-wrapper > div." + currentSection).forEach(function(el){el.classList.add("d-none")});
+      document.querySelectorAll(".menu-wrapper > div.menu").forEach(function(el){el.classList.remove("d-none")});
+      document.querySelector(".cart-items-wrapper").innerHTML = "";
+      total = 0;
+      subtotal = 0;
+      if (cart.length > 0) {
+        cartIcon.classList.remove("d-none");
+      }
 
-    total = 0;
-    subtotal = 0;
-    
-    if (cart.length > 0) {
-      cartIcon.classList.remove("d-none");
+      backToMenu();
+    });
+  })
+
+  document.querySelector(".custom-order-heading").addEventListener("click", function(){
+    if (!document.querySelector(".custom-order-wrapper").classList.contains("active")) {
+      document.querySelector(".custom-order-wrapper").classList.add("active");
+    } else {
+      document.querySelector(".custom-order-wrapper").classList.remove("active");
     }
-    
   });
+
+  document.querySelector("textarea.custom-order").addEventListener("input", function(){
+    if (this.value !== '') {
+      if (document.querySelector(".custom-order-label").classList.contains("d-none")) {
+        document.querySelector(".custom-order-label").classList.remove("d-none")
+      }
+    } else {
+      document.querySelector(".custom-order-label").classList.add("d-none")
+    }
+    document.querySelector(".custom-order-text").textContent = this.value;
+  })
 
   
 
@@ -281,6 +342,7 @@ document.addEventListener("DOMContentLoaded", async function(){
 
   document.querySelector("input[name='location']").addEventListener("input", function(){
     document.querySelector("#location-text").textContent = this.value;
+    checkRequiredFields();
   });
 
   document.querySelector("input[name='name']").addEventListener("input", function(){
@@ -290,6 +352,7 @@ document.addEventListener("DOMContentLoaded", async function(){
       if (!document.querySelector(".split-text").classList.contains("d-none")) document.querySelector(".split-text").classList.add("d-none");
     }
     document.querySelector("#name-text").textContent = this.value;
+    checkRequiredFields();
   });
 
   document.querySelector("input[name='contact']").addEventListener("input", function(){
@@ -299,6 +362,7 @@ document.addEventListener("DOMContentLoaded", async function(){
       if (!document.querySelector(".split-text").classList.contains("d-none")) document.querySelector(".split-text").classList.add("d-none");
     }
     document.querySelector("#contact-text").textContent = this.value;
+    checkRequiredFields();
   });
 
   document.querySelector(".modal .exit-modal").addEventListener("click", function(){
@@ -308,42 +372,62 @@ document.addEventListener("DOMContentLoaded", async function(){
 
   function organizeDetails(){
    
-    document.querySelector("textarea").value = "Orders:";
+    document.querySelector("textarea.to-copy").value = "Orders:";
     cart.forEach(function(item){
-      document.querySelector("textarea").value += "\n  " + item.qty + " " + item.name;
+      document.querySelector("textarea.to-copy").value += "\n  " + item.qty + " " + item.name;
     });
 
-    let loc, name, con;
+    let loc, name, con, custom;
     loc = document.querySelector("input[name='location']");
     name = document.querySelector("input[name='name']");
     con = document.querySelector("input[name='contact']");
+    custom = document.querySelector("textarea.custom-order");
+    if (custom.value !== '') {
+      document.querySelector("textarea.to-copy").value += "\n\nCustom orders:";
+      document.querySelector("textarea.to-copy").value += "\n  " + custom.value;
+    }
     if (loc.value !== '') {
-      document.querySelector("textarea").value += "\n\nLocation:";
-      document.querySelector("textarea").value += "\n  " + loc.value;
+      document.querySelector("textarea.to-copy").value += "\n\nLocation:";
+      document.querySelector("textarea.to-copy").value += "\n  " + loc.value;
     }
     if (name.value !== '') {
-      document.querySelector("textarea").value += "\n\nName & Contact:";
-      document.querySelector("textarea").value += "\n  " + name.value;
+      document.querySelector("textarea.to-copy").value += "\n\nName & Contact:";
+      document.querySelector("textarea.to-copy").value += "\n  " + name.value;
       if (con.value !== '') {
-        document.querySelector("textarea").value += " | " + con.value;
+        document.querySelector("textarea.to-copy").value += " | " + con.value;
       }
     } else {
       if (con.value !== '') {
-        document.querySelector("textarea").value += "\n\nName & Contact:";
-        document.querySelector("textarea").value += "\n  " + con.value;
+        document.querySelector("textarea.to-copy").value += "\n\nName & Contact:";
+        document.querySelector("textarea.to-copy").value += "\n  " + con.value;
       }
     }
   }
 
+  function checkRequiredFields(){
+    let loc, name, con;
+    loc = document.querySelector("input[name='location']");
+    name = document.querySelector("input[name='name']");
+    con = document.querySelector("input[name='contact']");
+    if (loc.value !== '' && name.value !== '' && con.value !== '') {
+      document.querySelector(".order-now-btn").classList.remove("disabled-btn");
+    } else {
+      if (!document.querySelector(".order-now-btn").classList.contains("disabled-btn")) document.querySelector(".order-now-btn").classList.add("disabled-btn");
+    }
+  }
+
   document.querySelector(".order-now-btn").addEventListener("click", function(){
-    organizeDetails();
-    let order_details = document.querySelector("textarea").value;
-    //window.open('https://m.me/catamora.07', '_blank');
-
-
-    navigator.clipboard.writeText(order_details);
-    window.open('https://m.me/catamora.07', '_blank');
-
+    if (!this.classList.contains("disabled-btn")) {
+      document.querySelector(".redirecting-modal").classList.remove("d-none");
+      organizeDetails();
+      let order_details = document.querySelector("textarea.to-copy").value;
+      navigator.clipboard.writeText(order_details);
+      document.querySelector(".modal .exit-modal").click();
+      setTimeout(() => {
+        document.querySelector(".redirecting-modal").classList.add("d-none");
+        window.open('https://m.me/61579248399955', '_blank');
+      }, 3000);
+    }
   })
 
   function moveToCartAnimation(clone, original, container){

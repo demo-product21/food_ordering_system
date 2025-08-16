@@ -7,6 +7,7 @@
     text-decoration: none;
     font-family: "Encode Sans", sans-serif; /* "Encode Sans", sans-serif; */
     -webkit-tap-highlight-color: transparent; 
+    resize: none;
 }
 
 html, body, main{
@@ -66,6 +67,7 @@ html, body, main{
 .item .item-image{
     border-radius: 4px 4px 0 0;
     flex: 1;
+    max-height: 70%;
     overflow: hidden;
 }
 
@@ -76,6 +78,8 @@ html, body, main{
 }
 
 .item-desc{
+    flex: 1;
+    max-height: 30%;
     padding: 2px 5px 5px 5px;
 }
 
@@ -91,7 +95,7 @@ html, body, main{
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.5);
     top: 0;
     left: 0;
     display: grid;
@@ -192,6 +196,32 @@ main > div:nth-child(1){
     background-repeat: no-repeat;
 }
 
+.page-loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    z-index: 200000000;
+}
+
+.hide-loader{
+    animation-name: hideloader;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hideloader {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+
 main > div:nth-child(1) .seller-quotes{
     position: absolute;
     top: 50%;
@@ -199,7 +229,7 @@ main > div:nth-child(1) .seller-quotes{
     width: 50%;
     transform: translate(-50%, -50%);
     border-radius: 16px;
-    background: #fff;
+    color: #fff;
     min-height: 150px;
     display: grid;
     place-items: center;
@@ -231,6 +261,11 @@ main > div:nth-child(1) .seller-quotes{
     background: rgba(0,0,0,0.7);
     display: grid;
     place-items: center;
+}
+
+.disabled-btn{
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 .scroll-up:hover{
@@ -388,7 +423,87 @@ main > div:nth-child(2) .foods-list > div{
     height: 100px;
 }
 
-.modal{
+.restaurant .photo{
+    max-height: 250px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.restaurant .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.socials-and-contacts {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    flex-wrap: wrap;
+}
+
+.socials-and-contacts > div{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 2px #000;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.custom-order-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 7px;
+}
+
+.custom-order-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: px;
+    overflow: hidden;
+    height: 0;
+}
+
+.custom-order-wrapper.active{
+    animation-name: wrapper;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes wrapper {
+    from {
+        height: 0;
+    } to {
+        height: 100px;
+    }
+}
+
+.custom-order-wrapper textarea{
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
+.custom-order-wrapper > div.inputs{
+    column-gap: 5px;
+    display: flex;
+    margin-top: 5px;
+}
+
+.socials-and-contacts > div svg{
+    opacity: .7;
+}
+
+.modal, .redirecting-modal{
     position: fixed;
     top: 0;
     left: 0;
@@ -399,14 +514,24 @@ main > div:nth-child(2) .foods-list > div{
     display: grid;
     place-items: center;
     overflow: auto;
-    padding: 50px 0;
+    padding: 20px 0 50px;
 }
 
-.modal .modal-wrapper{
+.wrapper-2{
+    display: grid;
+    place-items: center;
+    min-height: 300px;
+}
+
+.modal::-webkit-scrollbar{
+    display: none;
+}
+
+.modal-wrapper{
     background: #fff;
     border-radius: 8px;
     padding: 10px 15px;
-    width: clamp(16.875rem, 13.7669rem + 15.5405vw, 31.25rem);
+    width: clamp(18.125rem, 15.2872rem + 14.1892vw, 31.25rem);
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
@@ -415,7 +540,7 @@ main > div:nth-child(2) .foods-list > div{
     margin-top: 15px;
 }
 
-.modal .form input{
+.modal .form input, .form select{
     padding: 7px 10px;
     border: 2px solid #000;
     border-radius: 4px;
@@ -488,6 +613,10 @@ main > div:nth-child(2) .foods-list > div{
         position: fixed;
         bottom: 10px;
         left: 20px;
+    }
+
+    .scroll-up{
+        bottom: 10px;
     }
 }
 
