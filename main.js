@@ -434,6 +434,7 @@ document.addEventListener("DOMContentLoaded", async function(){
     clone.classList.add("moving-item");
     clone.style.height = "100px";
     clone.style.width = "100px";
+    clone.style.objectFit = "cover";
 
     let target = document.querySelector(".cart-icon");
 
