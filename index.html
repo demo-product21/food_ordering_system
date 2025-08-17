@@ -117,6 +117,13 @@
                     </svg>
                 </div>
             </div>
+            <br>
+            <span class="fs-16">Location</span><br>
+            <span class="fs-13">Villamonte, Bacolod, Negros Occidental</span>
+            <div style="height: 300px;overflow: hidden;margin-top:15px;border-radius: 4px;">
+                <iframe style="height: 100%;width: 100%;border:none;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31366.10454824086!2d122.94042505886358!3d10.675489963806358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aed1a1ebd53819%3A0x139473242faf561e!2sGusto!5e0!3m2!1sen!2sph!4v1755437917912!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               
+            </div>
         </div>
         <div class="restaurant d-none">
             <div class="photo">
@@ -233,7 +240,12 @@
                 <input type="text" name="name" placeholder="Enter your name"/>
                 <span class="fs-13">Contact:</span>
                 <input type="text" name="contact" placeholder="Enter your contact number">
-                
+                <span class="fs-13">Mode of Payment:</span>
+                <select name="mop">
+                    <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
+                    <option value="GCash">GCash</option>
+                    <option value="PayMaya">PayMaya</option>
+                </select>
                 <div class="custom-order-heading">
                     <span class="fs-13 bold">Add a custom order</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -262,6 +274,10 @@ send to place your order.</span>
                     <span class="fs-13">Name and Contact:</span>
                     <div class="details-container">
                         <span class="fs-13"><span id="name-text"></span>&nbsp;<span class="d-none split-text">|</span>&nbsp;<span id="contact-text"></span></span>
+                    </div>
+                    <span class="custom-order-label fs-13">Mode of Payment:</span>
+                    <div class="details-container fs-13">
+                        <span class="fs-13" id="mop-text">Cash on Delivery (COD)</span>
                     </div>
                     
                 </div>

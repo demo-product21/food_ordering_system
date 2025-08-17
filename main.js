@@ -365,6 +365,10 @@ document.addEventListener("DOMContentLoaded", async function(){
     checkRequiredFields();
   });
 
+  document.querySelector("select[name='mop']").addEventListener("change", function(){
+    document.querySelector("#mop-text").textContent = this.value;
+  })
+
   document.querySelector(".modal .exit-modal").addEventListener("click", function(){
     document.documentElement.style.overflow = "auto";
     document.querySelector(".modal").classList.add("d-none");
@@ -402,6 +406,10 @@ document.addEventListener("DOMContentLoaded", async function(){
         document.querySelector("textarea.to-copy").value += "\n  " + con.value;
       }
     }
+
+    document.querySelector("textarea.to-copy").value += "\n\nMode of Payment:";
+    document.querySelector("textarea.to-copy").value += "\n  " + document.querySelector("select[name='mop']").value;
+    
   }
 
   function checkRequiredFields(){
