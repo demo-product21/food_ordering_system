@@ -252,6 +252,9 @@ document.addEventListener("DOMContentLoaded", async function(){
             numOfItemsInCart += 1;
             cartIcon.querySelector(".num-of-items").textContent = numOfItemsInCart;
           }
+
+        } else {
+          deleteCartItem(newItem.getAttribute("data-id"));
         }
       });
     });
